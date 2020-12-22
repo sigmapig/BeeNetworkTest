@@ -1,0 +1,59 @@
+﻿@model BeeNetworkTest.Models.User
+
+<h2>Login</h2>
+
+<div class="border container" style="padding:30px;">
+    <form method="post" asp-controller="users" asp-action="Login" id="target">
+        @*asp-route-returnurl="@Model.ReturnUrl">*@
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Username"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Username" />
+                <span asp-validation-for="Username"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Password"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="RememberMe"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="RememberMe" />
+                <span asp-validation-for="RememberMe"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <button type="submit" class="btn btn-primary form-control">
+                    Login
+                </button>
+            </div>
+            <div class="col-3">
+                <a asp-action="Index" class="btn btn-success form-control">Register</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@*@section scripts {
+        <script type="text/javascript">
+            $("#target").submit(function (event) {
+                $("#login").hide();
+            });
+        </script>
+    }*@
